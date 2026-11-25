@@ -294,13 +294,13 @@ html[data-theme=dark] .rv-q .bd{color:#fff}
 
 <section id="reviews" style="background:#fff"><div class="wrap">
  <h2 class="rev">آراء أولياء الأمور</h2><p class="sub">رسائل حقيقية من أولياء الأمور على واتساب.</p>
- <div class="car" dir="rtl"><button class="cb" id="cn" aria-label="التالي">&#8250;</button><div class="ct" id="ct" tabindex="0"><div class="rc"><img src="r1.webp" alt="رأي ولي أمر" loading="eager" width="738"></div><div class="rc"><img src="r2.webp" alt="رأي ولي أمر" loading="eager" width="738"></div><div class="rc"><img src="r3.webp" alt="رأي ولي أمر" loading="lazy" width="738"></div><div class="rc"><img src="r5.webp" alt="رأي ولي أمر" loading="lazy" width="738"></div><div class="rc"><img src="r6.webp" alt="رأي ولي أمر" loading="lazy" width="738"></div><div class="rc"><img src="r7.webp" alt="رأي ولي أمر" loading="lazy" width="738"></div><div class="rc"><img src="r8.webp" alt="رأي ولي أمر" loading="lazy" width="738"></div><div class="rc"><img src="r9.webp" alt="رأي ولي أمر" loading="lazy" width="738"></div><div class="rc"><img src="r10.webp" alt="رأي ولي أمر" loading="lazy" width="738"></div></div><button class="cb" id="cp" aria-label="السابق">&#8249;</button></div>
+ <div class="car" dir="rtl"><button class="cb" id="cn" aria-label="التالي">&#8250;</button><div class="ct" id="ct" tabindex="0"><div class="rc"><img data-b="r1.txt" alt="رأي ولي أمر" loading="eager" width="738" height="550"></div><div class="rc"><img data-b="r2.txt" alt="رأي ولي أمر" loading="eager" width="738" height="402"></div><div class="rc"><img data-b="r3.txt" alt="رأي ولي أمر" loading="lazy" width="738" height="557"></div><div class="rc"><img data-b="r5.txt" alt="رأي ولي أمر" loading="lazy" width="738" height="447"></div><div class="rc"><img data-b="r6.txt" alt="رأي ولي أمر" loading="lazy" width="738" height="495"></div><div class="rc"><img data-b="r7.txt" alt="رأي ولي أمر" loading="lazy" width="738" height="471"></div><div class="rc"><img data-b="r8.txt" alt="رأي ولي أمر" loading="lazy" width="738" height="297"></div><div class="rc"><img data-b="r9.txt" alt="رأي ولي أمر" loading="lazy" width="738" height="305"></div><div class="rc"><img data-b="r10.txt" alt="رأي ولي أمر" loading="lazy" width="738" height="268"></div></div><button class="cb" id="cp" aria-label="السابق">&#8249;</button></div>
  </div>
 </div></section>
 
 <section class="about" id="about"><div class="wrap">
  <div class="ab">
-  <img class="ph rev" width="260" height="260" decoding="async" src="photo.webp" alt="حسن التميمي، مدرس ماث أونلاين">
+  <img class="ph rev" width="260" height="260" decoding="async" data-b="photo.txt" alt="حسن التميمي، مدرس ماث أونلاين">
   <div class="abt rev" style="--d:.15s">
    <h2>أنا حسن التميمي</h2>
    <p style="color:var(--gold);font-size:clamp(20px,1.6vw + 14px,28px);font-weight:700;margin:6px 0 0">الماث puzzle وحلّه معانا</p>
@@ -396,6 +396,7 @@ start()})();(function(){var h=document.documentElement,b=document.getElementById
 function ap(t){h.setAttribute("data-theme",t);b.textContent=t==="dark"?"\u2600":"\u263E";b.setAttribute("aria-pressed",t==="dark");b.setAttribute("aria-label",t==="dark"?"التبديل إلى الوضع الفاتح":"التبديل إلى الوضع الداكن");if(m)m.content=t==="dark"?"#0b1426":"#10213f"}
 ap(h.getAttribute("data-theme")||"dark");
 b.addEventListener("click",function(){var t=h.getAttribute("data-theme")==="dark"?"light":"dark";ap(t);try{localStorage.setItem("theme",t)}catch(e){}})})();
+(function(){function ld(){document.querySelectorAll("img[data-b]").forEach(function(im){fetch(im.getAttribute("data-b")).then(function(r){return r.text()}).then(function(t){im.src="data:image/webp;base64,"+t.trim()})})}if(document.readyState==="complete")ld();else addEventListener("load",ld)})();
 </script>
 </body>
 </html>
