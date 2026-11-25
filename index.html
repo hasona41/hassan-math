@@ -359,7 +359,7 @@ function buildGrades(){var h="";for(var g=5;g<=12;g++)h+='<button type="button" 
  [].forEach.call(document.querySelectorAll(".gb"),function(b){b.onclick=function(){grade=+b.getAttribute("data-g");loadBank(grade,function(d){Q=d.q;META=d.q;TOP=d.top;TIP=d.tip;ans=[];TL=[];TR=false;i=0;show("vQ");render()})};b.onpointerenter=b.ontouchstart=function(){loadBank(+b.getAttribute("data-g"))}})}
 var BC={};
 function bkey(g){return (g<=9&&(cur==="uae"||cur==="american"||cur==="saudi")?cur:"shared")+"-"+g}
-function loadBank(g,cb){var k=bkey(g),p=BC[k];if(!p){p=BC[k]=fetch("q-"+k+".json").then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){var pr=function(v){return typeof v==="string"?[v,v]:v};d.top=d.top.map(pr);d.tip=d.tip.map(pr);d.q.forEach(function(q){if(q.en===undefined){q.en=q.ar;q.e=q.s}});return d})}
+function loadBank(g,cb){var k=bkey(g),p=BC[k];if(!p){p=BC[k]=fetch("q-"+k+".json?v=20261126b",{cache:"no-cache"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){var pr=function(v){return typeof v==="string"?[v,v]:v};d.top=d.top.map(pr);d.tip=d.tip.map(pr);d.q.forEach(function(q){if(q.en===undefined){q.en=q.ar;q.e=q.s}});return d})}
  if(cb)p.then(cb,function(){delete BC[k];$("gt").textContent=EN?"Could not load. Check your connection and try again.":"تعذر التحميل. تأكد من الإنترنت وحاول مرة أخرى."});return p}
 $("gb2").onclick=function(){show(cur.indexOf("uae")===0?"vTrack":"vStart")};$("tb2").onclick=function(){show("vStart")};Array.prototype.forEach.call(document.querySelectorAll(".cc"),function(b){b.onclick=function(){show("vTrack")}});
 $("prev").onclick=function(){if(i){i--;render();anim("qt");anim("opts")}};
@@ -420,7 +420,7 @@ start()})();(function(){var h=document.documentElement,b=document.getElementById
 function ap(t){h.setAttribute("data-theme",t);b.textContent=t==="dark"?"\u2600":"\u263E";b.setAttribute("aria-pressed",t==="dark");b.setAttribute("aria-label",t==="dark"?"التبديل إلى الوضع الفاتح":"التبديل إلى الوضع الداكن");if(m)m.content=t==="dark"?"#0b1426":"#10213f"}
 ap(h.getAttribute("data-theme")||"dark");
 })();
-(function(){function ld(){document.querySelectorAll("img[data-b]").forEach(function(im){fetch(im.getAttribute("data-b")).then(function(r){return r.text()}).then(function(t){im.src="data:image/webp;base64,"+t.trim()})})}if(document.readyState==="complete")ld();else addEventListener("load",ld)})();
+(function(){function ld(){document.querySelectorAll("img[data-b]").forEach(function(im){fetch(im.getAttribute("data-b")+"?v=20261126b",{cache:"no-cache"}).then(function(r){return r.text()}).then(function(t){im.src="data:image/webp;base64,"+t.trim()})})}if(document.readyState==="complete")ld();else addEventListener("load",ld)})();
 </script>
 </body>
 </html>
