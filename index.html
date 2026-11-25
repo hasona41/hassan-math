@@ -258,9 +258,9 @@ html[data-theme=dark] .rv-q .bd{color:#fff}
    <div class="score" style="font-size:56px;color:var(--gold)">؟</div>
    <h3 style="margin:12px 0 6px">جاهز؟</h3>
    <p>اترك الطالب يحل بنفسه، بالورقة والقلم وبدون آلة حاسبة. النتيجة تقدير مبدئي، وليست تقييمًا رسميًا.</p>
-   <p style="font-weight:700;color:var(--navy);margin-bottom:10px">اختر المنهج أولًا</p><div class="cur cur3"><button type="button" class="opt cc" data-t="uae">الإماراتي</button><button type="button" class="opt c" data-c="saudi">السعودي</button><button type="button" class="opt c" data-c="american">الأمريكي</button></div><p class="note">الإماراتي والأمريكي: الأسئلة بالإنجليزية. السعودي: بالعربية. الصفوف من 5 إلى 12 لكل المناهج.</p>
+   <p style="font-weight:700;color:var(--navy);margin-bottom:10px">اختر المنهج أولًا</p><div class="cur cur3"><button type="button" class="opt cc" data-t="uae">الإماراتي</button><button type="button" class="opt c" data-c="saudi">السعودي</button><button type="button" class="opt c" data-c="american">الأمريكي</button></div><p class="note">الإماراتي (ريفيل ومتقدم) والأمريكي: الأسئلة بالإنجليزية. الإماراتي (عام) والسعودي: بالعربية. الصفوف من 5 إلى 12 لكل المناهج.</p>
   </div>
-  <div id="vTrack" class="hide start"><p style="font-weight:700;color:var(--navy);margin-bottom:12px">اختر المسار الإماراتي</p><div class="cur cur3"><button type="button" class="opt c" data-c="uae">ريفيل</button><button type="button" class="opt c" data-c="uaeg">عام</button><button type="button" class="opt c" data-c="uaea">متقدم</button></div><p style="margin-top:14px"><button type="button" class="btn ghost" id="tb2" style="color:var(--navy);border-color:var(--line)">رجوع</button></p><p class="note">ريفيل: أسئلة مبنية على موضوعات كتاب ريفيل للصفوف 5 إلى 9. عام ومتقدم: أسئلة عامة حسب الصف، وليست مطابقة لمقرر المسار.</p></div>
+  <div id="vTrack" class="hide start"><p style="font-weight:700;color:var(--navy);margin-bottom:12px">اختر المسار الإماراتي</p><div class="cur cur3"><button type="button" class="opt c" data-c="uae">ريفيل</button><button type="button" class="opt c" data-c="uaeg">عام</button><button type="button" class="opt c" data-c="uaea">متقدم</button></div><p style="margin-top:14px"><button type="button" class="btn ghost" id="tb2" style="color:var(--navy);border-color:var(--line)">رجوع</button></p><p class="note">ريفيل: أسئلة بالإنجليزية مبنية على موضوعات كتاب ريفيل للصفوف 5 إلى 9. عام: أسئلة بالعربية. متقدم: أسئلة بالإنجليزية. وكلاهما أسئلة عامة حسب الصف وليست مطابقة لمقرر المسار.</p></div>
   <div id="vGrade" class="hide start"><p id="gt" style="font-weight:700;color:var(--navy);margin-bottom:12px"></p><div class="cur" id="gl"></div><p style="margin-top:14px"><button type="button" class="btn ghost" id="gb2" style="color:var(--navy);border-color:var(--line)"></button></p></div>
   <div id="vQ" class="hide">
    <div class="prog"><i id="bar"></i></div>
@@ -318,7 +318,7 @@ html[data-theme=dark] .rv-q .bd{color:#fff}
 // ضع رقم الواتساب بصيغة دولية بدون + (مثال: 9715XXXXXXXX)
 var WA_NUMBER = "201201639038";
 var Q=[],META=[],TOP=[],TIP=[],grade=0;
-var CUR={uae:["الإماراتي · ريفيل",1],uaeg:["الإماراتي · عام",1],uaea:["الإماراتي · متقدم",1],american:["أمريكي",1],saudi:["سعودي",0]},cur="uae",EN=false;
+var CUR={uae:["الإماراتي · ريفيل",1],uaeg:["الإماراتي · عام",0],uaea:["الإماراتي · متقدم",1],american:["أمريكي",1],saudi:["سعودي",0]},cur="uae",EN=false;
 var $=function(i){return document.getElementById(i)},ans=[],i=0;
 function waLink(t){var b=t||"السلام عليكم، حابب أحجز حصة تجريبية ماث.";return "https://wa.me/"+WA_NUMBER+"?text="+encodeURIComponent(b)}
 ["wa2","wa3","wa4"].forEach(function(id){$(id).href=waLink()});
